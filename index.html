@@ -7,6 +7,7 @@
     <meta name="description"
         content="Eva-Safe – The ultimate disaster safety companion. Find evacuation centers and track your family's safety in real-time during emergencies.">
     <title>Eva-Safe | Stay Safe. Stay Connected.</title>
+    <link rel="icon" href="eva-safe-logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -32,7 +33,7 @@
             </ul>
 
             <!-- CTA -->
-            <a href="#features" class="btn btn-primary" style="flex-shrink:0;">
+            <a href="#problems" class="btn btn-primary" style="flex-shrink:0;">
                 Get Started
                 <i class="fas fa-arrow-right" style="font-size:.8rem;"></i>
             </a>
@@ -73,10 +74,10 @@
                 <p>Eva-Safe is the ultimate disaster safety companion — helping you find evacuation centers and track
                     your family's safety in real-time during emergencies.</p>
                 <div class="hero-actions">
-                    <a href="#features" class="btn btn-primary">
-                        Get Started
-                        <i class="fas fa-arrow-right" style="font-size:.8rem;"></i>
-                    </a>
+                    <button id="downloadTrigger" class="btn btn-primary">
+                        Download Now
+                        <i class="fas fa-download" style="font-size:.8rem;"></i>
+                    </button>
                     <a href="#features" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
@@ -114,7 +115,6 @@
                         <span class="carousel-dot" data-index="1"></span>
                         <span class="carousel-dot" data-index="2"></span>
                         <span class="carousel-dot" data-index="3"></span>
-                        <span class="carousel-dot" data-index="4"></span>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
     </section>
 
     <!-- ==================== PROBLEMS ==================== -->
-    <section class="problems">
+    <section id="problems" class="problems">
         <div class="problems-inner">
             <div class="section-header text-center">
                 <span class="section-label">The Challenge</span>
@@ -220,12 +220,12 @@
                         <img src="john.jpg" alt="Johnray Abogador">
                     </div>
                     <h3>Johnray Abogador</h3>
-                    <p class="team-role">Project Manager</p>
-                    <p>Leading Eva-Safe with strategic vision and operational excellence. Johnray brings deep experience
-                        in disaster management technology and team coordination.</p>
+                    <p class="team-role">CEO</p>
+                    <p>Leading Eva-Safe as CEO with strategic vision and operational excellence. Johnray drives the
+                        mission to make disaster response accessible to every community.</p>
                     <div class="team-socials">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/john.abogador.9" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
 
@@ -235,12 +235,12 @@
                         <img src="gil.jpg" alt="Gilberth Paluga">
                     </div>
                     <h3>Gilberth Paluga</h3>
-                    <p class="team-role">Lead Developer</p>
-                    <p>Building robust, scalable technology for emergency response systems. Gilberth specializes in
-                        mobile development and offline-first architectures.</p>
+                    <p class="team-role">COO</p>
+                    <p>Overseeing operations as COO, Gilberth builds robust and scalable technology for emergency
+                        response systems, specializing in mobile development and offline-first architectures.</p>
                     <div class="team-socials">
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/gilberth.paluga" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
 
@@ -250,12 +250,12 @@
                         <img src="raymond.jpg" alt="Raymond Abogador">
                     </div>
                     <h3>Raymond Abogador</h3>
-                    <p class="team-role">Research Lead</p>
-                    <p>Driving evidence-based innovation in disaster preparedness. Raymond's research focuses on
-                        real-world emergency response patterns and user behavior.</p>
+                    <p class="team-role">CMO</p>
+                    <p>As CMO, Raymond drives evidence-based marketing and outreach for disaster preparedness, focusing
+                        on real-world emergency response patterns and growing community awareness.</p>
                     <div class="team-socials">
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/raymond.abogador.2025" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -322,6 +322,61 @@
             </div>
         </div>
     </footer>
+
+    <!-- ==================== DOWNLOAD MODAL ==================== -->
+    <div id="downloadModal" class="dl-modal-overlay">
+        <div class="dl-modal">
+            <button id="dlModalClose" class="dl-modal-close" aria-label="Close">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <div class="dl-modal-icon">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3>Download Eva-Safe</h3>
+            <p class="dl-modal-warning">
+                <i class="fas fa-triangle-exclamation"></i>
+                <span>You are about to download an APK file. Please make sure to enable <strong>"Install from Unknown
+                        Sources"</strong> in your device settings before installing.</span>
+            </p>
+            <p class="dl-modal-size">
+                <i class="fas fa-file-arrow-down"></i>
+                File: <strong>Eva-Safe.apk</strong>
+            </p>
+            <div class="dl-modal-actions">
+                <button id="dlModalCancel" class="btn btn-outline">Cancel</button>
+                <a href="app-release.apk" download id="dlModalConfirm" class="btn btn-primary">
+                    <i class="fas fa-download" style="font-size:.8rem;"></i>
+                    Confirm Download
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CAROUSEL SCRIPT ==================== -->
+    <!-- ==================== DOWNLOAD MODAL SCRIPT ==================== -->
+    <script>
+        (function () {
+            const trigger = document.getElementById('downloadTrigger');
+            const modal = document.getElementById('downloadModal');
+            const closeBtn = document.getElementById('dlModalClose');
+            const cancelBtn = document.getElementById('dlModalCancel');
+            const confirmBtn = document.getElementById('dlModalConfirm');
+
+            function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+            function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
+
+            trigger.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+            confirmBtn.addEventListener('click', function () { setTimeout(closeModal, 400); });
+
+            // Close on overlay click
+            modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+        })();
+    </script>
 
     <!-- ==================== CAROUSEL SCRIPT ==================== -->
     <script>
